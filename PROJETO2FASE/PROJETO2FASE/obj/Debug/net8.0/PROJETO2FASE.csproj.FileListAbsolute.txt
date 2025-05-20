@@ -96,3 +96,37 @@ C:\Users\mjuli\OneDrive\Documentos\GitHub\Tecnicas\projeto\PROJETO2FASE\PROJETO2
 C:\Users\mjuli\OneDrive\Documentos\GitHub\Tecnicas\projeto\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.pdb
 C:\Users\mjuli\OneDrive\Documentos\GitHub\Tecnicas\projeto\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.genruntimeconfig.cache
 C:\Users\mjuli\OneDrive\Documentos\GitHub\Tecnicas\projeto\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\ref\PROJETO2FASE.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.exe
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Classes\Player.cs
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.deps.json
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.runtimeconfig.json
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.pdb
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\MonoGame.Framework.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\NVorbis.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\android-arm\native\libopenal.so
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\android-arm64\native\libopenal.so
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\android-x64\native\libopenal.so
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\android-x86\native\libopenal.so
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\ios-arm64\native\libopenal.dylib
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\iossimulator-arm64\native\libopenal.dylib
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\iossimulator-x64\native\libopenal.dylib
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\linux-x64\native\libopenal.so
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\osx\native\libopenal.dylib
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\win-x64\native\openal.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.csproj.AssemblyReference.cache
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.AssemblyInfoInputs.cache
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.AssemblyInfo.cs
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.csproj.CoreCompileInputs.cache
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2.62D7005F.Up2Date
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\refint\PROJETO2FASE.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.pdb
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.genruntimeconfig.cache
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\ref\PROJETO2FASE.dll
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Classes\Mapa.cs
+C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Content\plataforma.xnb
