@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\",
+  "WorkspaceRootPath": "C:\\Users\\David\\Documents\\GitHub\\Tecnicas\\PROJETO2FASE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame\\projeto2fase\\projeto2fase\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\david\\documents\\github\\tecnicas\\projeto2fase\\projeto2fase\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame\\projeto2fase\\projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\david\\documents\\github\\tecnicas\\projeto2fase\\projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,21 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GitHub\\Tecnicas\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
               "RelativeDocumentMoniker": "PROJETO2FASE\\Player.cs",
-              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GitHub\\Tecnicas\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
               "RelativeToolTip": "PROJETO2FASE\\Player.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAYwBcAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAwwGEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T14:50:19.547Z",
               "EditorCaption": ""
@@ -41,13 +37,14 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GitHub\\Tecnicas\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
               "RelativeDocumentMoniker": "PROJETO2FASE\\Game1.cs",
-              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GitHub\\Tecnicas\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
               "RelativeToolTip": "PROJETO2FASE\\Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:49:05.252Z"
+              "WhenOpened": "2025-05-20T14:49:05.252Z",
+              "EditorCaption": ""
             }
           ]
         }
