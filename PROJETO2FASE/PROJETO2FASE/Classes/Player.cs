@@ -3,14 +3,18 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
-namespace PROJETO2FASE
+namespace PROJETO2FASE.Classes
 {
     public class Player
     {
+        private float tempoDesdeChao;
+        private const float CoyoteTimeMax = 0.1f; // 100ms de tolerância
+
         public Vector2 Position;
         private Vector2 Velocity;
         private Texture2D texture;
         private bool pousado;
+        private KeyboardState previousKeyState;
 
         private const float MoveSpeed = 200f;
         private const float Gravity = 900f;
@@ -22,6 +26,7 @@ namespace PROJETO2FASE
             Position = startPos;
             Velocity = Vector2.Zero;
             pousado = false;
+            previousKeyState = Keyboard.GetState(); // Inicializar
         }
 
         public void Update(GameTime gameTime, List<Rectangle> platforms)
@@ -31,18 +36,11 @@ namespace PROJETO2FASE
 
             // Movimento horizontal
             if (keyState.IsKeyDown(Keys.A))
-                Velocity.X = -MoveSpeed; // velociadade fica ao contrário
+                Velocity.X = -MoveSpeed;
             else if (keyState.IsKeyDown(Keys.D))
                 Velocity.X = MoveSpeed;
             else
                 Velocity.X = 0;
-
-            // Salto
-            if ((keyState.IsKeyDown(Keys.Space) || keyState.IsKeyDown(Keys.W) && pousado))
-            {
-                Velocity.Y = JumpVelocity;
-                pousado = false;
-            }
 
             // Gravidade
             Velocity.Y += Gravity * dt;
@@ -88,7 +86,29 @@ namespace PROJETO2FASE
                     playerRect.Y = (int)Position.Y;
                 }
             }
+
+            // Atualizar tempo desde o chão
+            if (pousado)
+                tempoDesdeChao = 0f;
+            else
+                tempoDesdeChao += dt;
+
+            // Verificar salto com coyote time
+            bool jumpPressed =
+                keyState.IsKeyDown(Keys.Space) && previousKeyState.IsKeyUp(Keys.Space) ||
+                keyState.IsKeyDown(Keys.W) && previousKeyState.IsKeyUp(Keys.W);
+
+            if (jumpPressed && tempoDesdeChao < CoyoteTimeMax)
+            {
+                Velocity.Y = JumpVelocity;
+                pousado = false;
+                tempoDesdeChao = CoyoteTimeMax; // impede novo salto até tocar no chão
+            }
+
+            previousKeyState = keyState;
         }
+
+
 
         public void Draw(SpriteBatch spriteBatch)
         {

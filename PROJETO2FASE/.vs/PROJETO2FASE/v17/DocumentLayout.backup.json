@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\",
+  "WorkspaceRootPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame\\projeto2fase\\projeto2fase\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame 2\\projeto2fase\\projeto2fase\\classes\\mapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\classes\\mapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame\\projeto2fase\\projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame 2\\projeto2fase\\projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame 2\\projeto2fase\\projeto2fase\\projeto2fase.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\projeto2fase.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PROJETO2FASE",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\PROJETO2FASE.csproj",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
+              "RelativeToolTip": "PROJETO2FASE\\PROJETO2FASE.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-20T17:04:05.51Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -27,27 +45,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
-              "RelativeDocumentMoniker": "PROJETO2FASE\\Player.cs",
-              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Player.cs",
-              "RelativeToolTip": "PROJETO2FASE\\Player.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCMAAAAnAAAAAAAAAA==",
+              "Title": "Mapa.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\Classes\\Mapa.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
+              "RelativeToolTip": "PROJETO2FASE\\Classes\\Mapa.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:19.547Z",
+              "WhenOpened": "2025-05-20T17:04:16.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
               "RelativeDocumentMoniker": "PROJETO2FASE\\Game1.cs",
-              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
               "RelativeToolTip": "PROJETO2FASE\\Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwEkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:49:05.252Z"
+              "WhenOpened": "2025-05-20T14:49:05.252Z",
+              "EditorCaption": ""
             }
           ]
         }
