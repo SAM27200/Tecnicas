@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
-namespace PROJETO2FASE
+namespace PROJETO2FASE.Classes
 {
     public class Player
     {
@@ -95,8 +95,8 @@ namespace PROJETO2FASE
 
             // Verificar salto com coyote time
             bool jumpPressed =
-                (keyState.IsKeyDown(Keys.Space) && previousKeyState.IsKeyUp(Keys.Space)) ||
-                (keyState.IsKeyDown(Keys.W) && previousKeyState.IsKeyUp(Keys.W));
+                keyState.IsKeyDown(Keys.Space) && previousKeyState.IsKeyUp(Keys.Space) ||
+                keyState.IsKeyDown(Keys.W) && previousKeyState.IsKeyUp(Keys.W);
 
             if (jumpPressed && tempoDesdeChao < CoyoteTimeMax)
             {
