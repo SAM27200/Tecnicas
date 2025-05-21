@@ -10,32 +10,61 @@ namespace PROJETO2FASE.Classes
         private float tempoDesdeChao;
         private const float CoyoteTimeMax = 0.1f; // 100ms de tolerância
 
+<<<<<<< Updated upstream
         public Vector2 Position;
         private Vector2 Velocity;
+=======
+        public Vector2 posicao;
+        private Vector2 velocidade;
+>>>>>>> Stashed changes
         private Texture2D texture;
         private bool pousado;
         private KeyboardState previousKeyState;
 
+<<<<<<< Updated upstream
         private const float MoveSpeed = 200f;
         private const float Gravity = 900f;
         private const float JumpVelocity = -450f;
+=======
+        private float moveSpeed = 200f;
+        private float gravidade = 900f;
+        private float jumpSpeed = -450f;
+        // ataque fisico
+        private bool atk = false;
+        private float tempoatk = 0.4f;   // tempo de animação  (depois ajustar)
+        private float tempoDecorrido =0f;  // tempo de ataque decorrido 
+        public Rectangle atkHitbox { get; private set; } = Rectangle.Empty;
+        // projetil
+        public List<Projetil> projeteis = new List<Projetil>();
+        public Texture2D projetilTexture;
+>>>>>>> Stashed changes
 
-        public Player(Texture2D texture, Vector2 startPos)
+        public Player(Texture2D texture, Vector2 posInicial)
         {
             this.texture = texture;
+<<<<<<< Updated upstream
             Position = startPos;
             Velocity = Vector2.Zero;
+=======
+            posicao = posInicial;
+            velocidade = Vector2.Zero;
+>>>>>>> Stashed changes
             pousado = false;
             previousKeyState = Keyboard.GetState(); // Inicializar
         }
 
-        public void Update(GameTime gameTime, List<Rectangle> platforms)
+        public void Update(GameTime gameTime, List<Rectangle> plataformas)
         {
+<<<<<<< Updated upstream
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+=======
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds; // delta time, é basicamento o tempo que passa desde o ultimo frame/update, dá uma melhor otimização para todos os dispositivos
+>>>>>>> Stashed changes
             KeyboardState keyState = Keyboard.GetState();
 
             // Movimento horizontal
             if (keyState.IsKeyDown(Keys.A))
+<<<<<<< Updated upstream
                 Velocity.X = -MoveSpeed;
             else if (keyState.IsKeyDown(Keys.D))
                 Velocity.X = MoveSpeed;
@@ -48,11 +77,25 @@ namespace PROJETO2FASE.Classes
             // Movimento e colisão horizontal
             Position.X += Velocity.X * dt;
             Rectangle playerRect = new Rectangle((int)Position.X, (int)Position.Y, texture.Width, texture.Height);
+=======
+                velocidade.X = -moveSpeed;
+            else if (keyState.IsKeyDown(Keys.D))
+                velocidade.X = moveSpeed;
+            else
+                velocidade.X = 0;
 
-            foreach (var platform in platforms)
+            // Gravidade
+            velocidade.Y += gravidade * dt; // a velocidade vertical aumenta conforme a gravidade 
+            // Movimento e colisão horizontal
+            posicao.X += velocidade.X * dt;
+            Rectangle playerHitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); // definicção da hitbox do player
+>>>>>>> Stashed changes
+
+            foreach (var platform in plataformas)
             {
                 if (playerRect.Intersects(platform))
                 {
+<<<<<<< Updated upstream
                     if (Velocity.X > 0)
                         Position.X = platform.Left - texture.Width;
                     else if (Velocity.X < 0)
@@ -60,16 +103,31 @@ namespace PROJETO2FASE.Classes
 
                     Velocity.X = 0;
                     playerRect.X = (int)Position.X;
+=======
+                    if (velocidade.X > 0)
+                        posicao.X = platform.Left - texture.Width; // impede a colisao do jogador ,ex: a largura do objeto é 100 e a do player 20, vai ter uma colisao no x = 80
+                    else if (velocidade.X < 0)
+                        posicao.X = platform.Right;
+
+                    velocidade.X = 0;
+                    playerHitbox.X = (int)posicao.X;
+>>>>>>> Stashed changes
                 }
             }
 
             // Movimento e colisão vertical
+<<<<<<< Updated upstream
             Position.Y += Velocity.Y * dt;
             playerRect.Y = (int)Position.Y;
+=======
+            posicao.Y += velocidade.Y * dt;
+            playerHitbox.Y = (int)posicao.Y;
+>>>>>>> Stashed changes
             pousado = false;
 
-            foreach (var platform in platforms)
+            foreach (var plataforma in plataformas)
             {
+<<<<<<< Updated upstream
                 if (playerRect.Intersects(platform))
                 {
                     if (Velocity.Y > 0)
@@ -84,6 +142,22 @@ namespace PROJETO2FASE.Classes
 
                     Velocity.Y = 0;
                     playerRect.Y = (int)Position.Y;
+=======
+                if (playerHitbox.Intersects(plataforma))
+                {
+                    if (velocidade.Y > 0)
+                    {
+                        posicao.Y = plataforma.Top - texture.Height;
+                        pousado = true;
+                    }
+                    else if (velocidade.Y < 0)
+                    {
+                        posicao.Y = plataforma.Bottom;
+                    }
+
+                    velocidade.Y = 0;
+                    playerHitbox.Y = (int)posicao.Y;
+>>>>>>> Stashed changes
                 }
             }
 
@@ -100,11 +174,66 @@ namespace PROJETO2FASE.Classes
 
             if (jumpPressed && tempoDesdeChao < CoyoteTimeMax)
             {
+<<<<<<< Updated upstream
                 Velocity.Y = JumpVelocity;
+=======
+                velocidade.Y = jumpSpeed;
+>>>>>>> Stashed changes
                 pousado = false;
                 tempoDesdeChao = CoyoteTimeMax; // impede novo salto até tocar no chão
             }
 
+            // logica de ataque fisico
+            if(keyState.IsKeyDown(Keys.E) && previousKeyState.IsKeyUp(Keys.E) && !atk)
+            {
+                atk = true;
+                tempoDecorrido = tempoatk;
+                int largura = 20;             // largura e altura da hitbox
+                int altura = texture.Height;
+                int frente;             // para criar a hitbox do ataque a frente do player
+                if (velocidade.X >= 0)
+                {
+                    frente = texture.Width; // ataque para a direita
+                }
+                else
+                {
+                    frente = -largura;   // ataque para a esquerda , o - é necessário para nao ficar distante do jogador
+                }
+                atkHitbox = new Rectangle ((int)posicao.X + frente, (int)posicao.Y, largura, altura);
+            }
+            if (atk == true)
+            {
+                tempoDecorrido -= dt;             
+                if (tempoDecorrido <= 0)
+                {
+                    atk = false;
+                    atkHitbox = Rectangle.Empty; // torna a hitbox vazia
+                }
+            }
+
+            //disparo 
+            if (keyState.IsKeyDown(Keys.Q) && previousKeyState.IsKeyUp(Keys.Q))
+            {
+                Vector2 direcao;
+                if (velocidade.X >= 0)
+                {
+                    direcao = new Vector2(1, 0); //para a direita
+                }
+                else
+                {
+                    direcao = new Vector2(-1, 0); //para a esquerda
+                }
+             // Aqui podem ajustar os valores para os projeteis sairem conforme a sprite
+                float ajusteX = -60f; // para a direita - valores positivos , para a esquerda - valores negativos
+                float ajusteY = -75f; // para baixo - valores positivos , para cima - valores negativos
+                if (direcao.X < 0)
+                {
+                    ajusteX = -texture.Width + ajusteX; // coloca o projetil a esquerda caso ele esteja a ir para a esquerda obvio
+                }
+                Vector2 disparo = new Vector2(posicao.X + ajusteX,posicao.Y + ajusteY);
+                Projetil novo = new Projetil(projetilTexture, disparo, direcao);
+                projeteis.Add(novo);
+            }
             previousKeyState = keyState;
         }
 

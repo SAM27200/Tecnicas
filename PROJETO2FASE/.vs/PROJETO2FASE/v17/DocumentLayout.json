@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "WorkspaceRootPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\",
   "Documents": [
     {
@@ -13,6 +14,25 @@
     {
       "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\monogame 2\\projeto2fase\\projeto2fase\\projeto2fase.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\projeto2fase.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+=======
+  "WorkspaceRootPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\github\\tecnicas\\projeto\\projeto2fase\\projeto2fase\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\github\\tecnicas\\projeto\\projeto2fase\\projeto2fase\\classes\\mapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\classes\\mapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\github\\tecnicas\\projeto\\projeto2fase\\projeto2fase\\classes\\projetil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\classes\\projetil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|c:\\users\\mjuli\\onedrive\\documentos\\github\\tecnicas\\projeto\\projeto2fase\\projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E8EB750-8410-42AD-BDFE-FB51E133E5AE}|PROJETO2FASE\\PROJETO2FASE.csproj|solutionrelative:projeto2fase\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -26,6 +46,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 2,
               "Title": "PROJETO2FASE.csproj",
               "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
@@ -35,6 +56,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-05-20T17:04:05.51Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\Game1.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
+              "RelativeToolTip": "PROJETO2FASE\\Game1.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAA5wCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:49:05.252Z",
+>>>>>>> Stashed changes
               "IsPinned": true
             },
             {
@@ -44,18 +76,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< Updated upstream
               "Title": "Mapa.cs",
               "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
               "RelativeDocumentMoniker": "PROJETO2FASE\\Classes\\Mapa.cs",
               "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
               "RelativeToolTip": "PROJETO2FASE\\Classes\\Mapa.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCcAAAABAAAAAAAAAA==",
+=======
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Player.cs",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\Classes\\Player.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Player.cs",
+              "RelativeToolTip": "PROJETO2FASE\\Classes\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:04:16.636Z",
+              "WhenOpened": "2025-05-21T09:00:11.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\Game1.cs",
@@ -65,6 +107,29 @@
               "ViewState": "AgIAAB8AAAAAAAAAAAAqwEkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T14:49:05.252Z"
+=======
+              "DocumentIndex": 2,
+              "Title": "Projetil.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Projetil.cs",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\Classes\\Projetil.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Projetil.cs",
+              "RelativeToolTip": "PROJETO2FASE\\Classes\\Projetil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T16:55:33.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mapa.cs",
+              "DocumentMoniker": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
+              "RelativeDocumentMoniker": "PROJETO2FASE\\Classes\\Mapa.cs",
+              "ToolTip": "C:\\Users\\mjuli\\OneDrive\\Documentos\\GitHub\\Tecnicas\\projeto\\PROJETO2FASE\\PROJETO2FASE\\Classes\\Mapa.cs",
+              "RelativeToolTip": "PROJETO2FASE\\Classes\\Mapa.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwBcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:04:16.636Z"
+>>>>>>> Stashed changes
             }
           ]
         }
