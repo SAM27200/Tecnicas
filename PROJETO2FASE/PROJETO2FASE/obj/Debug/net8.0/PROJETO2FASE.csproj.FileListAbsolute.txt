@@ -4,7 +4,6 @@ C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\obj\Debug\
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.AssemblyInfo.cs
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\PROJETO2FASE.csproj.CoreCompileInputs.cache
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.exe
-C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Player.cs
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.deps.json
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.runtimeconfig.json
 C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\PROJETO2FASE.dll
@@ -130,3 +129,6 @@ C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debu
 C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\obj\Debug\net8.0\ref\PROJETO2FASE.dll
 C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Classes\Mapa.cs
 C:\Users\mjuli\OneDrive\Documentos\MONOGAME 2\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Content\plataforma.xnb
+C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Content\plataforma.xnb
+C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Classes\Mapa.cs
+C:\Users\mjuli\OneDrive\Documentos\MonoGame\PROJETO2FASE\PROJETO2FASE\bin\Debug\net8.0\Classes\Player.cs

@@ -4,7 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/mjuli/OneDrive/Documentos/MONOGAME 2/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

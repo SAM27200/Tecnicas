@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj": {}
+    "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj": {
+    "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
+        "projectUniqueName": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
         "projectName": "PROJETO2FASE",
-        "projectPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
+        "projectPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\PROJETO2FASE.csproj",
         "packagesPath": "C:\\Users\\mjuli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MONOGAME 2\\PROJETO2FASE\\PROJETO2FASE\\obj\\",
+        "outputPath": "C:\\Users\\mjuli\\OneDrive\\Documentos\\MonoGame\\PROJETO2FASE\\PROJETO2FASE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -17,7 +17,7 @@ namespace PROJETO2FASE.Classes
         public Mapa(GraphicsDevice graphicsDevice, ContentManager content) // adicionei o content manager
         {
             texture = content.Load<Texture2D>("plataforma");  // dei load a imagem de plataforma no content
-
+           
             plataformas = new List<Rectangle> {
                 new Rectangle(0, 400, 800, 50),       // coordenas da plataforma 1º - eixo do x 2º eixo do y 3º comprimento 4º altura AVISO: AS COORDENAS FUNCIONAM AO CONTRARIO!!!
                 new Rectangle(300, 300, 200, 30),

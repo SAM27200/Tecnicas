@@ -10,80 +10,80 @@ namespace PROJETO2FASE.Classes
         private float tempoDesdeChao;
         private const float CoyoteTimeMax = 0.1f; // 100ms de tolerância
 
-        public Vector2 Position;
-        private Vector2 Velocity;
+        public Vector2 posicao;
+        private Vector2 velocity;
         private Texture2D texture;
         private bool pousado;
         private KeyboardState previousKeyState;
 
-        private const float MoveSpeed = 200f;
-        private const float Gravity = 900f;
-        private const float JumpVelocity = -450f;
+        private const float moveSpeed = 200f;
+        private const float gravidade = 900f;
+        private const float jumpSpeed = -450f;
 
         public Player(Texture2D texture, Vector2 startPos)
         {
             this.texture = texture;
-            Position = startPos;
-            Velocity = Vector2.Zero;
+            posicao = startPos;
+            velocity = Vector2.Zero;
             pousado = false;
             previousKeyState = Keyboard.GetState(); // Inicializar
         }
 
         public void Update(GameTime gameTime, List<Rectangle> platforms)
         {
-            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds; // delta time, 
             KeyboardState keyState = Keyboard.GetState();
 
             // Movimento horizontal
             if (keyState.IsKeyDown(Keys.A))
-                Velocity.X = -MoveSpeed;
+                velocity.X = -moveSpeed;
             else if (keyState.IsKeyDown(Keys.D))
-                Velocity.X = MoveSpeed;
+                velocity.X = moveSpeed;
             else
-                Velocity.X = 0;
+                velocity.X = 0;
 
             // Gravidade
-            Velocity.Y += Gravity * dt;
+            velocity.Y += gravidade * dt;
 
             // Movimento e colisão horizontal
-            Position.X += Velocity.X * dt;
-            Rectangle playerRect = new Rectangle((int)Position.X, (int)Position.Y, texture.Width, texture.Height);
+            posicao.X += velocity.X * dt;
+            Rectangle playerHitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); // definicção da hitbox do player
 
             foreach (var platform in platforms)
             {
-                if (playerRect.Intersects(platform))
+                if (playerHitbox.Intersects(platform))
                 {
-                    if (Velocity.X > 0)
-                        Position.X = platform.Left - texture.Width;
-                    else if (Velocity.X < 0)
-                        Position.X = platform.Right;
+                    if (velocity.X > 0)
+                        posicao.X = platform.Left - texture.Width;
+                    else if (velocity.X < 0)
+                        posicao.X = platform.Right;
 
-                    Velocity.X = 0;
-                    playerRect.X = (int)Position.X;
+                    velocity.X = 0;
+                    playerHitbox.X = (int)posicao.X;
                 }
             }
 
             // Movimento e colisão vertical
-            Position.Y += Velocity.Y * dt;
-            playerRect.Y = (int)Position.Y;
+            posicao.Y += velocity.Y * dt;
+            playerHitbox.Y = (int)posicao.Y;
             pousado = false;
 
             foreach (var platform in platforms)
             {
-                if (playerRect.Intersects(platform))
+                if (playerHitbox.Intersects(platform))
                 {
-                    if (Velocity.Y > 0)
+                    if (velocity.Y > 0)
                     {
-                        Position.Y = platform.Top - texture.Height;
+                        posicao.Y = platform.Top - texture.Height;
                         pousado = true;
                     }
-                    else if (Velocity.Y < 0)
+                    else if (velocity.Y < 0)
                     {
-                        Position.Y = platform.Bottom;
+                        posicao.Y = platform.Bottom;
                     }
 
-                    Velocity.Y = 0;
-                    playerRect.Y = (int)Position.Y;
+                    velocity.Y = 0;
+                    playerHitbox.Y = (int)posicao.Y;
                 }
             }
 
@@ -94,13 +94,11 @@ namespace PROJETO2FASE.Classes
                 tempoDesdeChao += dt;
 
             // Verificar salto com coyote time
-            bool jumpPressed =
-                keyState.IsKeyDown(Keys.Space) && previousKeyState.IsKeyUp(Keys.Space) ||
-                keyState.IsKeyDown(Keys.W) && previousKeyState.IsKeyUp(Keys.W);
+            bool jumpPressed = keyState.IsKeyDown(Keys.Space) && previousKeyState.IsKeyUp(Keys.Space) || keyState.IsKeyDown(Keys.W) && previousKeyState.IsKeyUp(Keys.W);
 
             if (jumpPressed && tempoDesdeChao < CoyoteTimeMax)
             {
-                Velocity.Y = JumpVelocity;
+                velocity.Y = jumpSpeed;
                 pousado = false;
                 tempoDesdeChao = CoyoteTimeMax; // impede novo salto até tocar no chão
             }
@@ -112,7 +110,7 @@ namespace PROJETO2FASE.Classes
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, Position, Color.White);
+            spriteBatch.Draw(texture, posicao, Color.White);
         }
     }
 }
