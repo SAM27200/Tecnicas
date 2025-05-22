@@ -22,7 +22,7 @@ namespace PROJETO2FASE.Classes
         private float moveSpeed = 200f;
         private float gravidade = 900f;
         private float jumpSpeed = -450f;
-        private int vida = 100;
+        public int vida = 100;
         public Rectangle hitbox // criei a hitbox no update, e coloquei isto aqui para poder usar com os inimigos
         {
             get

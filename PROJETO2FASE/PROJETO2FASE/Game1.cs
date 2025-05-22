@@ -24,7 +24,9 @@ namespace PROJETO2FASE
         private InimigoSPATK inimigospatk;
         private Texture2D texturaInimigospatk;
         private FollowCamera camera;
-        
+        private GameOver gameover;
+        private bool morto = false;
+        private List<ParallaxLayer> backgroundLayers; // adicionar
 
         public Game1()
         {
@@ -42,6 +44,17 @@ namespace PROJETO2FASE
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            backgroundLayers = new List<ParallaxLayer>
+            {
+               new ParallaxLayer(Content.Load<Texture2D>("Layer0"), 0.1f, GraphicsDevice),
+               new ParallaxLayer(Content.Load<Texture2D>("Layer1"), 0.2f, GraphicsDevice),
+               new ParallaxLayer(Content.Load<Texture2D>("Layer2"), 0.4f, GraphicsDevice),
+               new ParallaxLayer(Content.Load<Texture2D>("Layer3"), 0.6f, GraphicsDevice),
+               new ParallaxLayer(Content.Load<Texture2D>("Layer4"), 0.8f, GraphicsDevice),
+               new ParallaxLayer(Content.Load<Texture2D>("Layer5"), 1.0f, GraphicsDevice, true)
+            };
+
             mapa = new Mapa(GraphicsDevice, Content); // e atualizei aqui para o caminho do content
 
             projetilTexture = Content.Load<Texture2D>("boladefogo"); // Esta é a textura teste dos projeteis samuel
@@ -58,17 +71,23 @@ namespace PROJETO2FASE
             for (int i = 0; i < playerData.Length; i++) playerData[i] = Color.Red;
             playerTexture.SetData(playerData);
 
-            // Inicializar jogador
             player = new Player(playerTexture, new Vector2(100, 100));
             player.projetilTexture = projetilTexture;                    // aqui associa a a textura do projetil aos do player
             hitboxatk = new Texture2D(GraphicsDevice, 1, 1);
             hitboxatk.SetData(new[] { Color.White });
+
+            SpriteFont fonte = Content.Load<SpriteFont>("File");
+            gameover = new GameOver(fonte, GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            foreach (var layer in backgroundLayers)
+            {
+                layer.Update(camera.position, gameTime);
+            }
 
             player.Update(gameTime, mapa.plataformas); // alterei o player.Update(gameTime, plataformas) para isto porque assim ele atualiza a colisão do player com as plataformas geradas no mapa
             
@@ -85,36 +104,73 @@ namespace PROJETO2FASE
             {
                 projetil.Update(gameTime);
             }
+
+            if (player.vida <= 0)
+            {
+                morto = true;
+            }
+
+            if (morto == true)
+            {
+                gameover.Update(gameTime);
+            }
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            // Paralaxe
+            _spriteBatch.Begin();
+            foreach (var layer in backgroundLayers)
+            {
+                layer.Draw(_spriteBatch);
+            }
+            _spriteBatch.End();
 
+            //Camera
             float verticalOffset = 30f; // ajusta este valor conforme a tua preferência
             Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(camera.position.X, camera.position.Y + verticalOffset, 0f));
 
             _spriteBatch.Begin(transformMatrix: cameraMatrix);
-
+            //Player
             player.Draw(_spriteBatch);
+
+            //Mapa
             mapa.Draw(_spriteBatch);
 
+            //Temporario
             if (!player.atkHitbox.IsEmpty)
             {
                 _spriteBatch.Draw(hitboxatk, player.atkHitbox, Color.Green * 0.5f);
             }
+
+            //Projeteis
             foreach (var projetil in player.projeteis)
             {
                 projetil.Draw(_spriteBatch);    //desenha os projeteis
             }
 
+            // Inimigo Ataque Fisico
             inimigoatk.Draw(_spriteBatch);
             _spriteBatch.Draw(hitboxatk, inimigoatk.hitbox, Color.Red * 0.5f); // temporario
 
+            // Inimigo Ataque Especial
             inimigospatk.Draw(_spriteBatch);
             _spriteBatch.Draw(hitboxatk, inimigospatk.hitbox, Color.Yellow * 0.5f); // tambem temporario
 
             _spriteBatch.End();
+
+            // Game over
+            if (morto == true)
+            {   
+                GraphicsDevice.Clear(Color.White);
+                _spriteBatch.Begin();
+                gameover.Draw(_spriteBatch);
+                _spriteBatch.End();
+                return;     // com este return n desenha mais
+            }
+
+   
 
             base.Draw(gameTime);
         }

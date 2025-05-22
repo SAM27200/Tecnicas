@@ -41,7 +41,23 @@ namespace PROJETO2FASE.Classes
                         posicao.Y = plataforma.Top - texture.Height; 
                         break;
                     }
-                } 
+                }
+                /*
+                 foreach (var plataforma in plataformas)
+                 {
+                     if (hitbox.Intersects(plataforma))
+                     {
+                         if (posicao.Y + texture.Height <= plataforma.Top)
+                         {
+                             posicao.Y = plataforma.Top - texture.Height;
+                         }
+                         else if (posicao.Y >= plataforma.Bottom)
+                         {
+                             posicao.Y = plataforma.Bottom;
+                         }
+                         break;
+                     }
+                 }*/
 
                 if (distancia < zonaATK)
                 {
