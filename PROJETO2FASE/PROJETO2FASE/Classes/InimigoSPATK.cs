@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PROJETO2FASE.Classes
 {
-    public class InimigoATK
+    public class InimigoSPATK
     {
         public Vector2 posicao;
         public int vida = 50;
@@ -19,7 +19,7 @@ namespace PROJETO2FASE.Classes
         private float cooldown = 1.1f;
         private float cooldownDecorr = 0f;
 
-        public InimigoATK(Vector2 posInicial, Texture2D textura)
+        public InimigoSPATK(Vector2 posInicial, Texture2D textura)
         {
             posicao = posInicial;
             texture = textura;
@@ -27,21 +27,21 @@ namespace PROJETO2FASE.Classes
 
         public void Update(GameTime gameTime, Player player, List<Rectangle> plataformas)
         {
-            if ( vida > 0) 
+            if (vida > 0)
             {
                 hitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); //faltava atualizar a posicao da hitbox e o tempo do cooldown
                 cooldownDecorr += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 Vector2 direcao = player.posicao - posicao;
                 float distancia = direcao.Length();
 
-               foreach (var plataforma in plataformas)
+                foreach (var plataforma in plataformas)
                 {
                     if (hitbox.Intersects(plataforma))
                     {
-                        posicao.Y = plataforma.Top - texture.Height; 
+                        posicao.Y = plataforma.Top - texture.Height;
                         break;
                     }
-                } 
+                }
 
                 if (distancia < zonaATK)
                 {
@@ -49,20 +49,20 @@ namespace PROJETO2FASE.Classes
                     posicao += direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                 }
-               /* if (player.atkHitbox.Intersects(this.hitbox))
-                {
-                    vida -= 50;
-                }*/
                 if (hitbox.Intersects(player.hitbox) && cooldownDecorr >= cooldown)
                 {
-                    player.levarDano(45);          // o player morrer em 3 ataques
+                    player.levarDano(65);          // o player morrer em 3 ataques
                     cooldownDecorr = 0;
                 }
             }
 
-        }
+            /* if (projetil.hitbox.Intersects(this.hitbox))
+              {
+                  vida -= 20;
+              }
+             */
 
-      
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
             if (vida > 0)
@@ -70,7 +70,6 @@ namespace PROJETO2FASE.Classes
                 spriteBatch.Draw(texture, posicao, Color.White);
             }
         }
-
 
     }
 

@@ -11,6 +11,10 @@ namespace PROJETO2FASE.Classes
         private const float CoyoteTimeMax = 0.1f; // 100ms de tolerância
 
         public Vector2 posicao;
+        public Vector2 size
+        {
+            get { return new Vector2(texture.Width, texture.Height); }
+        }
         private Vector2 velocidade;
         private Texture2D texture;
         private bool pousado;
@@ -47,14 +51,6 @@ namespace PROJETO2FASE.Classes
             previousKeyState = Keyboard.GetState(); // Inicializar
         }
 
-        public void levarDano(int dano)
-        {
-            vida -= dano;
-            if (vida <= 0)
-            {
-                // o player morre mas primeiro vou tratar do inimigo
-            }
-        }
         public void Update(GameTime gameTime, List<Rectangle> plataformas)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds; // delta time, é basicamento o tempo que passa desde o ultimo frame/update, dá uma melhor otimização para todos os dispositivos
@@ -154,6 +150,7 @@ namespace PROJETO2FASE.Classes
                     atk = false;
                     atkHitbox = Rectangle.Empty; // torna a hitbox vazia
                 }
+
             }
 
             //disparo 
@@ -169,8 +166,8 @@ namespace PROJETO2FASE.Classes
                     direcao = new Vector2(-1, 0); //para a esquerda
                 }
              // Aqui podem ajustar os valores para os projeteis sairem conforme a sprite
-                float ajusteX = -60f; // para a direita - valores positivos , para a esquerda - valores negativos
-                float ajusteY = -75f; // para baixo - valores positivos , para cima - valores negativos
+                float ajusteX = 20f; // para a direita - valores positivos , para a esquerda - valores negativos
+                float ajusteY = 10f; // para baixo - valores positivos , para cima - valores negativos
                 if (direcao.X < 0)
                 {
                     ajusteX = -texture.Width + ajusteX; // coloca o projetil a esquerda caso ele esteja a ir para a esquerda obvio
@@ -179,14 +176,44 @@ namespace PROJETO2FASE.Classes
                 Projetil novo = new Projetil(projetilTexture, disparo, direcao);
                 projeteis.Add(novo);
             }
+
             previousKeyState = keyState;
         }
+        public void levarDano(int dano) // o player leva dano
+        {
+            vida -= dano;
 
+        }
+        public void ataqueFisico(InimigoATK inimigo)
+        {
+            if (!atkHitbox.IsEmpty && atkHitbox.Intersects(inimigo.hitbox))
+            {
+                inimigo.vida -= 50;
+            }
+        }
 
-
+        public void ataqueEspecial(InimigoSPATK inimigo)
+        {
+            List<Projetil> despawn = new List<Projetil>(); // remove os projeteis assim que eles acertam na hitbox do inimigo
+            foreach (var projetil in projeteis)
+            {
+                if (projetil.hitbox.Intersects(inimigo.hitbox))
+                {
+                    inimigo.vida -= 20;
+                    despawn.Add(projetil);
+                }
+            }
+            foreach (var projetil in despawn)
+            {
+                projeteis.Remove(projetil);
+            }
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, posicao, Color.White);
+            if (vida > 0)
+            {
+                spriteBatch.Draw(texture, posicao, Color.White);
+            }
         }
     }
 }

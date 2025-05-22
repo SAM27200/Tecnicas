@@ -19,13 +19,19 @@ namespace PROJETO2FASE
         private Texture2D hitboxatk; //temporario
         public List<Projetil> projeteis = new List<Projetil>();
         public Texture2D projetilTexture;
-        private InimigoATK inimigo;
-        private Texture2D texturaInimigo;
+        private InimigoATK inimigoatk;
+        private Texture2D texturaInimigoatk;
+        private InimigoSPATK inimigospatk;
+        private Texture2D texturaInimigospatk;
+        private FollowCamera camera;
+        
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            camera = new(Vector2.Zero);
         }
 
         protected override void Initialize()
@@ -40,8 +46,11 @@ namespace PROJETO2FASE
 
             projetilTexture = Content.Load<Texture2D>("boladefogo"); // Esta é a textura teste dos projeteis samuel
 
-            texturaInimigo = Content.Load<Texture2D>("teste"); 
-            inimigo = new InimigoATK(new Vector2(500, 300), texturaInimigo);
+            texturaInimigoatk = Content.Load<Texture2D>("enimigo"); 
+            inimigoatk = new InimigoATK(new Vector2(500, 400), texturaInimigoatk);
+
+            texturaInimigospatk = Content.Load<Texture2D>("teste1");
+            inimigospatk = new InimigoSPATK(new Vector2(700, 300), texturaInimigospatk);  
 
             // Criar textura vermelha para o player
             playerTexture = new Texture2D(GraphicsDevice, 50, 50);
@@ -62,7 +71,13 @@ namespace PROJETO2FASE
                 Exit();
 
             player.Update(gameTime, mapa.plataformas); // alterei o player.Update(gameTime, plataformas) para isto porque assim ele atualiza a colisão do player com as plataformas geradas no mapa
-            inimigo.Update(gameTime, player, mapa.plataformas);
+            
+            inimigoatk.Update(gameTime, player, mapa.plataformas);
+            inimigospatk.Update(gameTime, player, mapa.plataformas);
+            player.ataqueFisico(inimigoatk);
+            player.ataqueEspecial(inimigospatk);
+
+            camera.Follow(player.posicao, player.size, new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight)); //Adiciona este no teu código do game1
             base.Update(gameTime);
 
 
@@ -76,7 +91,10 @@ namespace PROJETO2FASE
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
+            float verticalOffset = 30f; // ajusta este valor conforme a tua preferência
+            Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(camera.position.X, camera.position.Y + verticalOffset, 0f));
+
+            _spriteBatch.Begin(transformMatrix: cameraMatrix);
 
             player.Draw(_spriteBatch);
             mapa.Draw(_spriteBatch);
@@ -89,8 +107,12 @@ namespace PROJETO2FASE
             {
                 projetil.Draw(_spriteBatch);    //desenha os projeteis
             }
-            inimigo.Draw(_spriteBatch);
-            _spriteBatch.Draw(hitboxatk, inimigo.hitbox, Color.Red * 0.5f); // temporario
+
+            inimigoatk.Draw(_spriteBatch);
+            _spriteBatch.Draw(hitboxatk, inimigoatk.hitbox, Color.Red * 0.5f); // temporario
+
+            inimigospatk.Draw(_spriteBatch);
+            _spriteBatch.Draw(hitboxatk, inimigospatk.hitbox, Color.Yellow * 0.5f); // tambem temporario
 
             _spriteBatch.End();
 

@@ -5,9 +5,9 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/boladefogo.png</File>
-    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/enimigo.webp</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/enimigo.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
-    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/teste.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/teste1.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
