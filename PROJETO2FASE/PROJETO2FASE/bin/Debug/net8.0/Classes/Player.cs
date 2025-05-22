@@ -11,78 +11,103 @@ namespace PROJETO2FASE.Classes
         private const float CoyoteTimeMax = 0.1f; // 100ms de tolerância
 
         public Vector2 posicao;
-        private Vector2 velocity;
+        private Vector2 velocidade;
         private Texture2D texture;
         private bool pousado;
         private KeyboardState previousKeyState;
+        private float moveSpeed = 200f;
+        private float gravidade = 900f;
+        private float jumpSpeed = -450f;
+        private int vida = 100;
+        public Rectangle hitbox // criei a hitbox no update, e coloquei isto aqui para poder usar com os inimigos
+        {
+            get
+            {
+                return new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height);
+            }
+        }
 
-        private const float moveSpeed = 200f;
-        private const float gravidade = 900f;
-        private const float jumpSpeed = -450f;
+        // ataque fisico
+        private bool atk = false;
+        private float tempoatk = 0.4f;   // tempo de animação  (depois ajustar)
+        private float tempoDecorrido =0f;  // tempo de ataque decorrido 
+        public Rectangle atkHitbox { get; private set; } = Rectangle.Empty;
 
-        public Player(Texture2D texture, Vector2 startPos)
+
+        // projetil
+        public List<Projetil> projeteis = new List<Projetil>();
+        public Texture2D projetilTexture;
+
+        public Player(Texture2D texture, Vector2 posInicial)
         {
             this.texture = texture;
-            posicao = startPos;
-            velocity = Vector2.Zero;
+            posicao = posInicial;
+            velocidade = Vector2.Zero;
             pousado = false;
             previousKeyState = Keyboard.GetState(); // Inicializar
         }
 
-        public void Update(GameTime gameTime, List<Rectangle> platforms)
+        public void levarDano(int dano)
         {
-            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds; // delta time, 
+            vida -= dano;
+            if (vida <= 0)
+            {
+                // o player morre mas primeiro vou tratar do inimigo
+            }
+        }
+        public void Update(GameTime gameTime, List<Rectangle> plataformas)
+        {
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds; // delta time, é basicamento o tempo que passa desde o ultimo frame/update, dá uma melhor otimização para todos os dispositivos
             KeyboardState keyState = Keyboard.GetState();
 
             // Movimento horizontal
             if (keyState.IsKeyDown(Keys.A))
-                velocity.X = -moveSpeed;
+                velocidade.X = -moveSpeed;
             else if (keyState.IsKeyDown(Keys.D))
-                velocity.X = moveSpeed;
+                velocidade.X = moveSpeed;
             else
-                velocity.X = 0;
+                velocidade.X = 0;
 
             // Gravidade
-            velocity.Y += gravidade * dt;
-
+            velocidade.Y += gravidade * dt; // a velocidade vertical aumenta conforme a gravidade 
             // Movimento e colisão horizontal
-            posicao.X += velocity.X * dt;
+            posicao.X += velocidade.X * dt;
             Rectangle playerHitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); // definicção da hitbox do player
 
-            foreach (var platform in platforms)
+            foreach (var platform in plataformas)
             {
                 if (playerHitbox.Intersects(platform))
                 {
-                    if (velocity.X > 0)
-                        posicao.X = platform.Left - texture.Width;
-                    else if (velocity.X < 0)
+                    if (velocidade.X > 0)
+                        posicao.X = platform.Left - texture.Width; // impede a colisao do jogador ,ex: a largura do objeto é 100 e a do player 20, vai ter uma colisao no x = 80
+                    else if (velocidade.X < 0)
                         posicao.X = platform.Right;
 
-                    velocity.X = 0;
+                    velocidade.X = 0;
                     playerHitbox.X = (int)posicao.X;
                 }
             }
 
             // Movimento e colisão vertical
-            posicao.Y += velocity.Y * dt;
+            posicao.Y += velocidade.Y * dt;
             playerHitbox.Y = (int)posicao.Y;
             pousado = false;
 
-            foreach (var platform in platforms)
+            foreach (var plataforma in plataformas)
             {
-                if (playerHitbox.Intersects(platform))
+                if (playerHitbox.Intersects(plataforma))
                 {
-                    if (velocity.Y > 0)
+                    if (velocidade.Y > 0)
                     {
-                        posicao.Y = platform.Top - texture.Height;
+                        posicao.Y = plataforma.Top - texture.Height;
                         pousado = true;
                     }
-                    else if (velocity.Y < 0)
+                    else if (velocidade.Y < 0)
                     {
-                        posicao.Y = platform.Bottom;
+                        posicao.Y = plataforma.Bottom;
                     }
 
-                    velocity.Y = 0;
+                    velocidade.Y = 0;
                     playerHitbox.Y = (int)posicao.Y;
                 }
             }
@@ -98,11 +123,62 @@ namespace PROJETO2FASE.Classes
 
             if (jumpPressed && tempoDesdeChao < CoyoteTimeMax)
             {
-                velocity.Y = jumpSpeed;
+                velocidade.Y = jumpSpeed;
                 pousado = false;
                 tempoDesdeChao = CoyoteTimeMax; // impede novo salto até tocar no chão
             }
 
+            // logica de ataque fisico
+            if(keyState.IsKeyDown(Keys.E) && previousKeyState.IsKeyUp(Keys.E) && !atk)
+            {
+                atk = true;
+                tempoDecorrido = tempoatk;
+                int largura = 20;             // largura e altura da hitbox
+                int altura = texture.Height;
+                int frente;             // para criar a hitbox do ataque a frente do player
+                if (velocidade.X >= 0)
+                {
+                    frente = texture.Width; // ataque para a direita
+                }
+                else
+                {
+                    frente = -largura;   // ataque para a esquerda , o - é necessário para nao ficar distante do jogador
+                }
+                atkHitbox = new Rectangle ((int)posicao.X + frente, (int)posicao.Y, largura, altura);
+            }
+            if (atk == true)
+            {
+                tempoDecorrido -= dt;             
+                if (tempoDecorrido <= 0)
+                {
+                    atk = false;
+                    atkHitbox = Rectangle.Empty; // torna a hitbox vazia
+                }
+            }
+
+            //disparo 
+            if (keyState.IsKeyDown(Keys.Q) && previousKeyState.IsKeyUp(Keys.Q))
+            {
+                Vector2 direcao;
+                if (velocidade.X >= 0)
+                {
+                    direcao = new Vector2(1, 0); //para a direita
+                }
+                else
+                {
+                    direcao = new Vector2(-1, 0); //para a esquerda
+                }
+             // Aqui podem ajustar os valores para os projeteis sairem conforme a sprite
+                float ajusteX = -60f; // para a direita - valores positivos , para a esquerda - valores negativos
+                float ajusteY = -75f; // para baixo - valores positivos , para cima - valores negativos
+                if (direcao.X < 0)
+                {
+                    ajusteX = -texture.Width + ajusteX; // coloca o projetil a esquerda caso ele esteja a ir para a esquerda obvio
+                }
+                Vector2 disparo = new Vector2(posicao.X + ajusteX,posicao.Y + ajusteY);
+                Projetil novo = new Projetil(projetilTexture, disparo, direcao);
+                projeteis.Add(novo);
+            }
             previousKeyState = keyState;
         }
 

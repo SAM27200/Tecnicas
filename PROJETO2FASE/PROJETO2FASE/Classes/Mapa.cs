@@ -19,7 +19,7 @@ namespace PROJETO2FASE.Classes
             texture = content.Load<Texture2D>("plataforma");  // dei load a imagem de plataforma no content
            
             plataformas = new List<Rectangle> {
-                new Rectangle(0, 400, 800, 50),       // coordenas da plataforma 1º - eixo do x 2º eixo do y 3º comprimento 4º altura AVISO: AS COORDENAS FUNCIONAM AO CONTRARIO!!!
+                new Rectangle(-40, 400, 1200, 110),       // coordenas da plataforma 1º - eixo do x 2º eixo do y 3º largura 4º altura AVISO: AS COORDENAS FUNCIONAM AO CONTRARIO!!!
                 new Rectangle(300, 300, 200, 30),
                 new Rectangle(600, 200, 150, 30),
     /*ew Rectangle(100, 250, 150, 25),    
