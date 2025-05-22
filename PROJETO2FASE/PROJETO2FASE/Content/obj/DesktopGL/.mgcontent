@@ -4,9 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/mjuli/OneDrive/Documentos/MONOGAME 2/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/boladefogo.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/enimigo.webp</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/teste.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
