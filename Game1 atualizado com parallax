@@ -1,0 +1,30 @@
+ private List<ParallaxLayer> backgroundLayers; // adicionar esta List no incio junto aos outros privates
+
+
+// Este código tem qye ser inserido logo asseguir ao "_spriteBatch = new SpriteBatch(GraphicsDevice);" no LoadContent
+ backgroundLayers = new List<ParallaxLayer>
+ {
+     new ParallaxLayer(Content.Load<Texture2D>("Layer0"), 0.1f, GraphicsDevice),
+     new ParallaxLayer(Content.Load<Texture2D>("Layer1"), 0.2f, GraphicsDevice),
+     new ParallaxLayer(Content.Load<Texture2D>("Layer2"), 0.4f, GraphicsDevice),
+     new ParallaxLayer(Content.Load<Texture2D>("Layer3"), 0.6f, GraphicsDevice),
+     new ParallaxLayer(Content.Load<Texture2D>("Layer4"), 0.8f, GraphicsDevice),
+     new ParallaxLayer(Content.Load<Texture2D>("Layer5"), 1.0f, GraphicsDevice, true)
+ };
+
+
+//Colocado logo asseguir ao "if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+    Exit();" no Update
+            foreach (var layer in backgroundLayers)
+            {
+                layer.Update(camera.position, gameTime);
+            }
+
+
+//Tem que ser colocado logo asseguir ao "GraphicsDevice.Clear(Color.CornflowerBlue);" no Draw para o background não aparecer à frente das texturas do player e dos inimigos, etc.
+_spriteBatch.Begin();
+foreach (var layer in backgroundLayers)
+{
+    layer.Draw(_spriteBatch);
+}
+_spriteBatch.End();
