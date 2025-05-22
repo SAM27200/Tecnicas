@@ -1,0 +1,60 @@
+        private FollowCamera camera; //Adcicona na linha 24 do Game1
+
+public Game1()
+{
+    _graphics = new GraphicsDeviceManager(this);
+    Content.RootDirectory = "Content";
+    IsMouseVisible = true;
+    camera = new(Vector2.Zero); // É esta a variavel nova
+}
+
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+
+            player.Update(gameTime, mapa.plataformas); // alterei o player.Update(gameTime, plataformas) para isto porque assim ele atualiza a colisão do player com as plataformas geradas no mapa
+            inimigo.Update(gameTime, player, mapa.plataformas);
+            camera.Follow(player.posicao, player.size, new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight)); //Adiciona este no teu código do game1
+            // Atualiza a posição da câmera para seguir o jogador
+            base.Update(gameTime);
+
+
+            foreach (var projetil in player.projeteis)
+            {
+                projetil.Update(gameTime);
+            }
+        }
+
+
+ protected override void Draw(GameTime gameTime)
+ {
+     GraphicsDevice.Clear(Color.CornflowerBlue);
+
+
+     float verticalOffset = 30f; // ajusta este valor conforme a tua preferência
+     Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(camera.position.X, camera.position.Y + verticalOffset, 0f));
+
+
+     _spriteBatch.Begin(transformMatrix: cameraMatrix);
+
+     // Desenha os elementos do jogo
+     player.Draw(_spriteBatch);
+     mapa.Draw(_spriteBatch);
+
+     if (!player.atkHitbox.IsEmpty)
+     {
+         _spriteBatch.Draw(hitboxatk, player.atkHitbox, Color.Green * 0.5f);
+     }
+     foreach (var projetil in player.projeteis)
+     {
+         projetil.Draw(_spriteBatch);
+     }
+     inimigo.Draw(_spriteBatch);
+     _spriteBatch.Draw(hitboxatk, inimigo.hitbox, Color.Red * 0.5f);
+
+     _spriteBatch.End();
+
+     base.Draw(gameTime);
+ }
