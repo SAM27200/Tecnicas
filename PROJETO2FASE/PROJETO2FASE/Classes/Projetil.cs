@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace PROJETO2FASE
+namespace PROJETO2FASE.Classes
 {
     public class Projetil
     {
