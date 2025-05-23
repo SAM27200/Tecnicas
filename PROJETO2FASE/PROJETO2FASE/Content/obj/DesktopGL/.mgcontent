@@ -7,6 +7,7 @@
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/boladefogo.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/enimigo.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/File.spritefont</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/GameOver.mp3</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/Layer0.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/layer1.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/Layer2.png</File>
@@ -15,8 +16,11 @@
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/Layer5.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/plataforma.png</File>
     <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/teste1.png</File>
+    <File>C:/Users/mjuli/OneDrive/Documentos/MonoGame/PROJETO2FASE/PROJETO2FASE/Content/Tralalero.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

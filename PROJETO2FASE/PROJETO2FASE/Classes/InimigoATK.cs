@@ -34,30 +34,39 @@ namespace PROJETO2FASE.Classes
                 Vector2 direcao = player.posicao - posicao;
                 float distancia = direcao.Length();
 
-               foreach (var plataforma in plataformas)
+                foreach(var plataforma in plataformas)
                 {
-                    if (hitbox.Intersects(plataforma))
+                    if (hitbox.Intersects(plataforma)) 
                     {
-                        posicao.Y = plataforma.Top - texture.Height; 
-                        break;
+                        if(posicao.Y + texture.Height <= plataforma.Top + 5) // cima
+                        {
+                            posicao.Y = plataforma.Top - texture.Height;
+                        }
+                        else if (posicao.Y >= plataforma.Bottom - 5)     // baixo
+                        {
+                            posicao.Y = plataforma.Bottom;
+                        }
+                        else if (posicao.X + texture.Width <= plataforma.Left + 5)  // esquerda
+                        {
+                            posicao.X = plataforma.Left - texture.Width;
+                        }
+                        else if (posicao.X >= plataforma.Right - 5)    // direita
+                        {
+                            posicao.X = plataforma.Right;
+                        }
+
                     }
+
                 }
-                /*
-                 foreach (var plataforma in plataformas)
-                 {
-                     if (hitbox.Intersects(plataforma))
-                     {
-                         if (posicao.Y + texture.Height <= plataforma.Top)
-                         {
-                             posicao.Y = plataforma.Top - texture.Height;
-                         }
-                         else if (posicao.Y >= plataforma.Bottom)
-                         {
-                             posicao.Y = plataforma.Bottom;
-                         }
-                         break;
-                     }
-                 }*/
+
+                /* foreach (var plataforma in plataformas)
+              {
+                  if (hitbox.Intersects(plataforma))
+                  {
+                      posicao.Y = plataforma.Top - texture.Height;
+                      break;
+                  }
+              }*/
 
                 if (distancia < zonaATK)
                 {

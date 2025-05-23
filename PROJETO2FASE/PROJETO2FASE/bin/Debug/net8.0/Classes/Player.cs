@@ -203,10 +203,12 @@ namespace PROJETO2FASE.Classes
                     despawn.Add(projetil);
                 }
             }
+
             foreach (var projetil in despawn)
             {
                 projeteis.Remove(projetil);
             }
+
         }
         public void Draw(SpriteBatch spriteBatch)
         {

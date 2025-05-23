@@ -29,7 +29,9 @@ namespace PROJETO2FASE.Classes
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(Fonte, "GAME OVER", new Vector2(100, 100), Color.Black);
+            spriteBatch.DrawString(Fonte, "GAME OVER", new Vector2(50, 100), Color.Black);
+            spriteBatch.DrawString(Fonte, "Não é um bug, é uma feature.", new Vector2(100, 300), Color.Black);
+
         }
     }
 }

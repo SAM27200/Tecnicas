@@ -18,7 +18,7 @@ namespace PROJETO2FASE.Classes
         public Rectangle hitbox;
         private float cooldown = 1.1f;
         private float cooldownDecorr = 0f;
-
+        
         public InimigoSPATK(Vector2 posInicial, Texture2D textura)
         {
             posicao = posInicial;
@@ -38,26 +38,35 @@ namespace PROJETO2FASE.Classes
                 {
                     if (hitbox.Intersects(plataforma))
                     {
-                        posicao.Y = plataforma.Top - texture.Height;
-                        break;
+                        if (posicao.Y + texture.Height <= plataforma.Top + 5) // cima
+                        {
+                            posicao.Y = plataforma.Top - texture.Height;
+                        }
+                        else if (posicao.Y >= plataforma.Bottom - 5)     // baixo
+                        {
+                            posicao.Y = plataforma.Bottom;
+                        }
+                        else if (posicao.X + texture.Width <= plataforma.Left + 5)  // esquerda
+                        {
+                            posicao.X = plataforma.Left - texture.Width;
+                        }
+                        else if (posicao.X >= plataforma.Right - 5)    // direita
+                        {
+                            posicao.X = plataforma.Right;
+                        }
+
                     }
+
                 }
-                /*
-                 foreach (var plataforma in plataformas)
-                 {
-                     if (hitbox.Intersects(plataforma))
-                     {
-                         if (posicao.Y + texture.Height <= plataforma.Top)
-                         {
-                             posicao.Y = plataforma.Top - texture.Height;
-                         }
-                         else if (posicao.Y >= plataforma.Bottom)
-                         {
-                             posicao.Y = plataforma.Bottom;
-                         }
-                         break;
-                     }
-                 }*/ 
+
+                /* foreach (var plataforma in plataformas)
+                   {
+                       if (hitbox.Intersects(plataforma))
+                       {
+                           posicao.Y = plataforma.Top - texture.Height;
+                           break;
+                       }
+                   }*/
 
                 if (distancia < zonaATK)
                 {
@@ -67,7 +76,7 @@ namespace PROJETO2FASE.Classes
                 }
                 if (hitbox.Intersects(player.hitbox) && cooldownDecorr >= cooldown)
                 {
-                    player.levarDano(65);          // o player morrer em 3 ataques
+                    player.levarDano(5);          // o player morrer em 3 ataques
                     cooldownDecorr = 0;
                 }
             }
