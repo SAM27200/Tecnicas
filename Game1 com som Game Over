@@ -1,0 +1,14 @@
+//Variáveis a adicionar
+private Song gameOver;
+private bool gameOverTriggered = false;
+
+//Adicionar no LoadContent
+ gameOver = Content.Load<Song>("GameOver");
+
+//Adciconar o este if no Update
+if (player.vida <= 0 && gameOverTriggered == false)
+{
+  gameOverTriggered = true;
+  MediaPlayer.Stop();         
+  MediaPlayer.Play(gameOver);
+}
