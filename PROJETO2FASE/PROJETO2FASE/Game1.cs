@@ -76,8 +76,13 @@ namespace PROJETO2FASE
               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
-
-
+              new InimigoATK(new Vector2(-1050, 260), texturaInimigoatk), 
+              new InimigoATK(new Vector2(-2400, 160), texturaInimigoatk), 
+              new InimigoATK(new Vector2(950, 150), texturaInimigoatk),   
+              new InimigoATK(new Vector2(1650, 250), texturaInimigoatk),  
+              new InimigoATK(new Vector2(1270, -40), texturaInimigoatk), 
+              new InimigoATK(new Vector2(-1600, -40), texturaInimigoatk),
+              new InimigoATK(new Vector2(500, -170), texturaInimigoatk),
             };
 
             // Inimigo especial
@@ -85,6 +90,13 @@ namespace PROJETO2FASE
             inimigosSPATK = new List<InimigoSPATK>
             {
                new InimigoSPATK(new Vector2(700, 300), texturaInimigospatk),
+               new InimigoSPATK(new Vector2(-1000, 230), texturaInimigospatk),   
+               new InimigoSPATK(new Vector2(-2450, 150), texturaInimigospatk),   
+               new InimigoSPATK(new Vector2(1000, 145), texturaInimigospatk),     
+               new InimigoSPATK(new Vector2(1520, 50), texturaInimigospatk),     
+               new InimigoSPATK(new Vector2(-20, -150), texturaInimigospatk),    
+               new InimigoSPATK(new Vector2(-390, -100), texturaInimigospatk),
+                new InimigoSPATK(new Vector2(300, -150), texturaInimigospatk),
             };
 
             // Criar textura vermelha para o player e coisas do player

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PROJETO2FASE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e49fa781e132e5766e62aabba37a69a3bced513")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c7be3ada792f2b652528f4e5081595e9932a00f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PROJETO2FASE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PROJETO2FASE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

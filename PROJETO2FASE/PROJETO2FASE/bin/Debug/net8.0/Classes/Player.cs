@@ -154,7 +154,7 @@ namespace PROJETO2FASE.Classes
             }
 
             //disparo 
-            if (keyState.IsKeyDown(Keys.Q) && previousKeyState.IsKeyUp(Keys.Q))
+            if (keyState.IsKeyDown(Keys.F) && previousKeyState.IsKeyUp(Keys.F))
             {
                 Vector2 direcao;
                 if (velocidade.X >= 0)
