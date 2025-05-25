@@ -549,7 +549,7 @@ namespace PROJETO2FASE
 
 # Player
 Na classe Player, são criadas todas as características do jogador, como o tamanho,a posição, a velocidade, a vida, a textura, a velocidade do movimento, o jump speed, a gravidade e a hitbox, o ataque e as características deste.
-O ataque é dividido em dois, o ataque físico e o ataque especial, que é um projétil, também é atribuída a hitbox do ataque físico e a sua colisão, e por fim é atribuído o dano a cada ataque para matar os inimigos específicos para o qual eles foram feitos.
+O ataque é dividido em dois, o ataque físico e o ataque de longo alcance, que é um projétil, também é atribuída a hitbox do ataque físico e a sua colisão, e por fim é atribuído o dano a cada ataque para matar os inimigos específicos para o qual eles foram feitos.
 Ainda são feitas algumas correções na classe para que o jogador não abuse das suas físicas, tal como voar e cooldown para o ataque físico.
 
 <details>
