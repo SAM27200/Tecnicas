@@ -200,7 +200,7 @@ namespace PROJETO2FASE.Classes
 - Zona de ataque;
 - Cooldown de ataque;
 
-No método Update conseguimos:
+A partir do método Update existem funções que nos permitem:
 
 - Criar colisão com plataformas;
 ```csharp
@@ -349,7 +349,7 @@ namespace PROJETO2FASE.Classes
 - Zona de ataque;
 - Cooldown de ataque;
 
-No método Update conseguimos:
+A partir do método Update existem funções que nos permitem:
 
 - Criar colisão com plataformas;
 ```csharp
