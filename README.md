@@ -190,7 +190,7 @@ namespace PROJETO2FASE.Classes
 
 }
 ```
-</detaisl>
+</details>
 
 - Posição;
 - Hitbox;
