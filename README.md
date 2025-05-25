@@ -1,4 +1,4 @@
-# Tecnicas
+# Trabalho Prático 02
 Trabalho de Técnicas (2º Fase)
 
 # (Nome do Jogo)
@@ -339,7 +339,7 @@ namespace PROJETO2FASE.Classes
 
 }
 ```
-</detaisl>
+</details>
   
 - Posição;
 - Hitbox;
