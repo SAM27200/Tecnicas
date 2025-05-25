@@ -1,15 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace PROJETO2FASE.Classes
-{
+{    
     internal class GameOver
     {
         private SpriteFont Fonte;
@@ -28,7 +23,7 @@ namespace PROJETO2FASE.Classes
             }
         }
         public void Draw(SpriteBatch spriteBatch)
-        {
+        {   // Tela 100% proposital
             spriteBatch.DrawString(Fonte, "GAME OVER", new Vector2(50, 100), Color.Black);
             spriteBatch.DrawString(Fonte, "Não é um bug, é uma feature.", new Vector2(100, 300), Color.Black);
 

@@ -14,24 +14,29 @@ namespace PROJETO2FASE
         private SpriteBatch _spriteBatch;
 
         private Mapa mapa;
+
         private Player player;
         private Texture2D playerTexture;
-        private Texture2D platformTexture;
-        private Texture2D hitboxatk; //temporario
+        private Texture2D hitboxatk; // opcional
+
         public List<Projetil> projeteis = new List<Projetil>();
         public Texture2D projetilTexture;
+
         private List<InimigoATK> inimigosATK;
         private List<InimigoSPATK> inimigosSPATK;
         private Texture2D texturaInimigoatk;
-        private InimigoSPATK inimigospatk;
         private Texture2D texturaInimigospatk;
-        private FollowCamera camera;
+
         private GameOver gameover;
         private bool morto = false;
-        private List<ParallaxLayer> backgroundLayers; // adicionar
         Song song;
         private Song gameOver;
         private bool gameOverTriggered = false;
+
+        private FollowCamera camera;
+        private List<ParallaxLayer> backgroundLayers; 
+    
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -61,32 +66,32 @@ namespace PROJETO2FASE
             };
 
             // Mapa
-            mapa = new Mapa(GraphicsDevice, Content); // e atualizei aqui para o caminho do content
+            mapa = new Mapa(GraphicsDevice, Content);
 
             // Projetil 
-            projetilTexture = Content.Load<Texture2D>("boladefogo"); // Esta é a textura teste dos projeteis samuel
+            projetilTexture = Content.Load<Texture2D>("boladefogo"); 
 
             // Inimigo fisico
-            texturaInimigoatk = Content.Load<Texture2D>("enimigo");
+            texturaInimigoatk = Content.Load<Texture2D>("InimigoATK");
             inimigosATK = new List<InimigoATK>
             {
-              new InimigoATK(new Vector2(500, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1500, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1600, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
-              new InimigoATK(new Vector2(-1050, 260), texturaInimigoatk), 
-              new InimigoATK(new Vector2(-2400, 160), texturaInimigoatk), 
-              new InimigoATK(new Vector2(950, 150), texturaInimigoatk),   
-              new InimigoATK(new Vector2(1650, 250), texturaInimigoatk),  
-              new InimigoATK(new Vector2(1270, -40), texturaInimigoatk), 
-              new InimigoATK(new Vector2(-1600, -40), texturaInimigoatk),
-              new InimigoATK(new Vector2(500, -170), texturaInimigoatk),
+               new InimigoATK(new Vector2(500, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1500, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1600, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1300, 350), texturaInimigoatk),
+               new InimigoATK(new Vector2(-1050, 260), texturaInimigoatk), 
+               new InimigoATK(new Vector2(-2400, 160), texturaInimigoatk), 
+               new InimigoATK(new Vector2(950, 150), texturaInimigoatk),   
+               new InimigoATK(new Vector2(1650, 250), texturaInimigoatk),  
+               new InimigoATK(new Vector2(1270, -40), texturaInimigoatk), 
+               new InimigoATK(new Vector2(-1600, -40), texturaInimigoatk),
+               new InimigoATK(new Vector2(500, -170), texturaInimigoatk),
             };
 
             // Inimigo especial
-            texturaInimigospatk = Content.Load<Texture2D>("teste1");
+            texturaInimigospatk = Content.Load<Texture2D>("InimigoSPATK");
             inimigosSPATK = new List<InimigoSPATK>
             {
                new InimigoSPATK(new Vector2(700, 300), texturaInimigospatk),
@@ -96,17 +101,15 @@ namespace PROJETO2FASE
                new InimigoSPATK(new Vector2(1520, 50), texturaInimigospatk),     
                new InimigoSPATK(new Vector2(-20, -150), texturaInimigospatk),    
                new InimigoSPATK(new Vector2(-390, -100), texturaInimigospatk),
-                new InimigoSPATK(new Vector2(300, -150), texturaInimigospatk),
+               new InimigoSPATK(new Vector2(300, -150), texturaInimigospatk),
             };
 
-            // Criar textura vermelha para o player e coisas do player
-            playerTexture = new Texture2D(GraphicsDevice, 50, 50);
-            Color[] playerData = new Color[50 * 50];
-            for (int i = 0; i < playerData.Length; i++) playerData[i] = Color.Red;
-            playerTexture.SetData(playerData);
-
+            //Player
+            playerTexture = Content.Load<Texture2D>("Player");
             player = new Player(playerTexture, new Vector2(100, 100));
-            player.projetilTexture = projetilTexture;                    // aqui associa a a textura do projetil aos do player
+
+            //Projetil
+            player.projetilTexture = projetilTexture;                    
             hitboxatk = new Texture2D(GraphicsDevice, 1, 1);
             hitboxatk.SetData(new[] { Color.White });
             
@@ -134,7 +137,7 @@ namespace PROJETO2FASE
             }
 
             // Update do player
-            player.Update(gameTime, mapa.plataformas); // alterei o player.Update(gameTime, plataformas) para isto porque assim ele atualiza a colisão do player com as plataformas geradas no mapa
+            player.Update(gameTime, mapa.plataformas); 
             
             
             // Update de inimigos físicos
@@ -151,7 +154,7 @@ namespace PROJETO2FASE
             }
 
             // Update de camera
-            camera.Follow(player.posicao, player.size, new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight)); //Adiciona este no teu código do game1
+            camera.Follow(player.posicao, player.size, new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight)); 
             base.Update(gameTime);
 
             // Update de projéteis
@@ -198,7 +201,7 @@ namespace PROJETO2FASE
             _spriteBatch.End();
 
             //Camera
-            float verticalOffset = 30f; // ajusta este valor conforme a tua preferência
+            float verticalOffset = 30f; // ajustar conforme preferência
             Matrix cameraMatrix = Matrix.CreateTranslation(new Vector3(camera.position.X, camera.position.Y + verticalOffset, 0f));
 
             _spriteBatch.Begin(transformMatrix: cameraMatrix);
@@ -217,7 +220,7 @@ namespace PROJETO2FASE
             //Projeteis
             foreach (var projetil in player.projeteis)
             {
-                projetil.Draw(_spriteBatch);    //desenha os projeteis
+                projetil.Draw(_spriteBatch);    
             }
 
             // Inimigo Ataque Fisico
@@ -242,7 +245,7 @@ namespace PROJETO2FASE
                 _spriteBatch.Begin();
                 gameover.Draw(_spriteBatch);
                 _spriteBatch.End();
-                return;     // com este return n desenha mais
+                return;     
             }
 
    

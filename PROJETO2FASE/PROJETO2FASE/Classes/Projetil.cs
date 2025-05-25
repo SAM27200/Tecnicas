@@ -1,14 +1,9 @@
 ﻿
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
-namespace PROJETO2FASE.Classes
+namespace PROJETO2FASE
 {
     public class Projetil
     {
@@ -22,12 +17,12 @@ namespace PROJETO2FASE.Classes
         {
             Texture = texture;
             posicao = posInicial;
-            velocidade = direcao * 121f;
+            velocidade = direcao * 237f; // para ajustar a velociade é necessário alterar o valor do float
         }
   
      public void Update(GameTime gameTime)
         {
-            posicao += velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;  //dt
+            posicao += velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;  // Atualiza a posição do projetil para ele se movimentar
         }
 
         public void Draw(SpriteBatch spriteBatch)

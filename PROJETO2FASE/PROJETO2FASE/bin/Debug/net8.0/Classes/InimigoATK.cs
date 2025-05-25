@@ -1,22 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace PROJETO2FASE.Classes
 {
     public class InimigoATK
     {
         public Vector2 posicao;
-        public int vida = 50;
-        private float velocidade = 100f;
-        private float zonaATK = 300f;
-        private Texture2D texture;
         public Rectangle hitbox;
-        private float cooldown = 1.1f;
+        private Texture2D texture;
+        public int vida = 50;
+        private float velocidade = 120f;
+        private float zonaATK = 300f;
+        private float cooldown = 2f;
         private float cooldownDecorr = 0f;
 
         public InimigoATK(Vector2 posInicial, Texture2D textura)
@@ -34,6 +31,7 @@ namespace PROJETO2FASE.Classes
                 Vector2 direcao = player.posicao - posicao;
                 float distancia = direcao.Length();
 
+                // Colisão com plataformas
                 foreach(var plataforma in plataformas)
                 {
                     if (hitbox.Intersects(plataforma)) 
@@ -58,36 +56,24 @@ namespace PROJETO2FASE.Classes
                     }
 
                 }
-
-                /* foreach (var plataforma in plataformas)
-              {
-                  if (hitbox.Intersects(plataforma))
-                  {
-                      posicao.Y = plataforma.Top - texture.Height;
-                      break;
-                  }
-              }*/
-
+                // Atacar o player
                 if (distancia < zonaATK)
                 {
                     direcao.Normalize();                       // para o inimigo vir atras do player
                     posicao += direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                 }
-               /* if (player.atkHitbox.Intersects(this.hitbox))
-                {
-                    vida -= 50;
-                }*/
+             
                 if (hitbox.Intersects(player.hitbox) && cooldownDecorr >= cooldown)
                 {
-                    player.levarDano(45);          // o player morrer em 3 ataques
+                    player.levarDano(20);          
                     cooldownDecorr = 0;
                 }
             }
 
         }
 
-      
+     
         public void Draw(SpriteBatch spriteBatch)
         {
             if (vida > 0)
