@@ -1,7 +1,7 @@
 # Trabalho Prático 02
 Trabalho de Técnicas (2º Fase)
 
-# Paralyzed Warrior
+# Static Warrior
 Neste projeto, desenvolvemos um jogo de plataforma 2D no qual o jogador possui dois tipos de ataque: um corpo a corpo e outro de longa distância. Esses ataques são essenciais para enfrentar dois tipos de inimigos diferentes, cada um vulnerável a um tipo específico de ataque. Assim, o jogador precisa utilizar a estratégia correta para derrotar cada inimigo.
 
 # Pré-Requesitos
