@@ -250,7 +250,7 @@ No método Update conseguimos:
 A classe InimmigoSPATK é muito semelhante à classe InimigoSPATK, a única coisa diferente são os valores das características do inimigo, neste caso, aquele que resiste a ataques físicos.
 Os tipos de características são:
 
-<details>
+</details>
     <summary>Clique aqui para ver a função completa</summary>
   
  ```csharp
