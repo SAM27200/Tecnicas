@@ -57,6 +57,7 @@ namespace PROJETO2FASE.Classes
 }
 ```
 # GameOver
+
 Na classe GameOver, é introduzida a tela de Game Over, que será chamada para preencher a tela quando o jogador morrer.
 ```csharp
 ﻿using Microsoft.Xna.Framework;
@@ -95,6 +96,102 @@ namespace PROJETO2FASE.Classes
 # InimigoATK
 Na classe InimmigoATK, são introduzidas as características do inimigo que resiste a ataques de longo alcance como:
 
+<details>
+    <summary>Clique aqui para ver a função completa</summary>
+  
+ ```csharp
+  ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+
+
+namespace PROJETO2FASE.Classes
+{
+    public class InimigoATK
+    {
+        public Vector2 posicao;
+        public Rectangle hitbox;
+        private Texture2D texture;
+        public int vida = 50;
+        private float velocidade = 120f;
+        private float zonaATK = 300f;
+        private float cooldown = 2f;
+        private float cooldownDecorr = 0f;
+
+        public InimigoATK(Vector2 posInicial, Texture2D textura)
+        {
+            posicao = posInicial;
+            texture = textura;
+        }
+
+        public void Update(GameTime gameTime, Player player, List<Rectangle> plataformas)
+        {
+            if ( vida > 0) 
+            {
+                hitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); //faltava atualizar a posicao da hitbox e o tempo do cooldown
+                cooldownDecorr += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                Vector2 direcao = player.posicao - posicao;
+                float distancia = direcao.Length();
+
+                // Colisão com plataformas
+                foreach(var plataforma in plataformas)
+                {
+                    if (hitbox.Intersects(plataforma)) 
+                    {
+                        if(posicao.Y + texture.Height <= plataforma.Top + 5) // cima
+                        {
+                            posicao.Y = plataforma.Top - texture.Height;
+                        }
+                        else if (posicao.Y >= plataforma.Bottom - 5)     // baixo
+                        {
+                            posicao.Y = plataforma.Bottom;
+                        }
+                        else if (posicao.X + texture.Width <= plataforma.Left + 5)  // esquerda
+                        {
+                            posicao.X = plataforma.Left - texture.Width;
+                        }
+                        else if (posicao.X >= plataforma.Right - 5)    // direita
+                        {
+                            posicao.X = plataforma.Right;
+                        }
+
+                    }
+
+                }
+                // Atacar o player
+                if (distancia < zonaATK)
+                {
+                    direcao.Normalize();                       // para o inimigo vir atras do player
+                    posicao += direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                }
+             
+                if (hitbox.Intersects(player.hitbox) && cooldownDecorr >= cooldown)
+                {
+                    player.levarDano(20);          
+                    cooldownDecorr = 0;
+                }
+            }
+
+        }
+
+     
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            if (vida > 0)
+            {
+                spriteBatch.Draw(texture, posicao, Color.White);
+            }
+        }
+
+
+    }
+
+
+}
+```
+</detaisl>
+
 - Posição;
 - Hitbox;
 - Textura;
@@ -132,6 +229,7 @@ No método Update conseguimos:
 
 ```
 - Atacar e seguir o player;
+  
 ```csharp
    if (distancia < zonaATK)
                 {
@@ -152,6 +250,97 @@ No método Update conseguimos:
 A classe InimmigoSPATK é muito semelhante à classe InimigoSPATK, a única coisa diferente são os valores das características do inimigo, neste caso, aquele que resiste a ataques físicos.
 Os tipos de características são:
 
+<details>
+    <summary>Clique aqui para ver a função completa</summary>
+  
+ ```csharp
+  ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+
+
+namespace PROJETO2FASE.Classes
+{
+    public class InimigoSPATK
+    {
+        public Vector2 posicao;
+        public Rectangle hitbox;
+        private Texture2D texture;
+        public int vida = 50;
+        private float velocidade = 110f;
+        private float zonaATK = 300f;
+        private float cooldown = 2f;
+        private float cooldownDecorr = 0f;
+        
+        public InimigoSPATK(Vector2 posInicial, Texture2D textura)
+        {
+            posicao = posInicial;
+            texture = textura;
+        }
+
+        public void Update(GameTime gameTime, Player player, List<Rectangle> plataformas)
+        {
+            if (vida > 0)
+            {
+                hitbox = new Rectangle((int)posicao.X, (int)posicao.Y, texture.Width, texture.Height); 
+                cooldownDecorr += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                Vector2 direcao = player.posicao - posicao;
+                float distancia = direcao.Length();
+
+                // Colisão com plataformas
+                foreach (var plataforma in plataformas)
+                {
+                    if (hitbox.Intersects(plataforma))
+                    {
+                        if (posicao.Y + texture.Height <= plataforma.Top + 5) // cima
+                        {
+                            posicao.Y = plataforma.Top - texture.Height;
+                        }
+                        else if (posicao.Y >= plataforma.Bottom - 5)     // baixo
+                        {
+                            posicao.Y = plataforma.Bottom;
+                        }
+                        else if (posicao.X + texture.Width <= plataforma.Left + 5)  // esquerda
+                        {
+                            posicao.X = plataforma.Left - texture.Width;
+                        }
+                        else if (posicao.X >= plataforma.Right - 5)    // direita
+                        {
+                            posicao.X = plataforma.Right;
+                        }
+
+                    }
+                }
+
+                // Atacar o player
+                if (distancia < zonaATK)
+                {
+                    direcao.Normalize();                     
+                    posicao += direcao * velocidade * (float)gameTime.ElapsedGameTime.TotalSeconds;   // para o inimigo vir atras do player
+
+                }
+                if (hitbox.Intersects(player.hitbox) && cooldownDecorr >= cooldown)
+                {
+                    player.levarDano(30);         
+                    cooldownDecorr = 0;
+                }
+            }
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            if (vida > 0)
+            {
+                spriteBatch.Draw(texture, posicao, Color.White);
+            }
+        }
+
+    }
+
+
+}
+```
+</detaisl>
+  
 - Posição;
 - Hitbox;
 - Textura;
@@ -858,3 +1047,12 @@ namespace PROJETO2FASE
 }
   ```
 </details>
+
+# Créditos
+- Sprite do player: https://free-game-assets.itch.io/free-fantasy-knight
+- Sprite do InimigoATK: https://pt.vecteezy.com/png/31098179-pixel-arte-desenho-animado-azul-fogo-cranio-cabeca
+- Sprite do InimigoSPATK: https://nastanliev.itch.io/flying-eyes
+- Sprite das plataformas: https://www.freepik.com/free-vector/gaming-landscape-constructor-set_4029191.htm#fromView=keyword&page=1&position=2&uuid=b782c2bc-543f-459e-ba3e-60aac7817b5f&query=2d+Platform+Game+Assets
+- Background: https://saurabhkgp.itch.io/pixel-art-forest-background-simple-seamless-parallax-ready-for-2d-platformer-s
+- Música de fundo: https://www.youtube.com/watch?v=vQRQ4LxR6_c
+- Efeito sonoro de gameover : https://www.youtube.com/watch?v=QGMJ6nbK8JM
