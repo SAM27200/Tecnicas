@@ -444,7 +444,7 @@ namespace PROJETO2FASE.Classes
 ```
 
 # ParallaxLayer
-A classe ParallaxLayer, funciona para desenhar as layers do background para dar a impressão que estas se repetem, através de cálculos com o offset da tela, e que também se movem com o player, sendo que estas também tenham o mesmo tamanho da Tela, tanto em altura como em largura.
+A classe ParallaxLayer, funciona para desenhar as layers do background para dar a impressão que estas se repetem, através de cálculos com o offset da tela, e que também se movem com o player, sendo que estas também tenham o mesmo tamanho da Janela do jogo, tanto em altura como em largura.
 
 ```csharp
 ﻿using Microsoft.Xna.Framework;
